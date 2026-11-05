@@ -12,34 +12,66 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* High-End Engineering Dark Grid & Gradient Background */
+      body {
+        background-color: #050811;
+        background-image: 
+          radial-gradient(rgba(16, 185, 129, 0.07) 1px, transparent 1px),
+          linear-gradient(to bottom, #050811, #0a0f1d, #03060d);
+        background-size: 32px 32px, 100% 100%;
+        background-attachment: fixed;
+      }
+
+      /* Professional Glassmorphism Dynamic Cards */
+      .bg-slate-900 {
+        background: rgba(13, 20, 36, 0.75) !important;
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(16, 185, 129, 0.15) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .bg-slate-900:hover {
+        transform: translateY(-4px);
+        border-color: rgba(16, 185, 129, 0.45) !important;
+        box-shadow: 0 14px 40px -12px rgba(16, 185, 129, 0.2);
+      }
+
+      /* Monospace Tech Labels */
+      .tech-label {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        letter-spacing: 0.05em;
+      }
+    </style>
 </head>
-<body class="bg-slate-950 dark:bg-slate-950 text-slate-100 dark:text-slate-100 transition-colors duration-300 font-sans antialiased">
+<body class="text-slate-100 font-sans antialiased">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 dark:bg-slate-900/90 backdrop-blur border-b border-slate-800">
+    <header class="sticky top-0 z-50 bg-[#050811]/90 backdrop-blur border-b border-slate-800/80">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-teal-400 tracking-wider">anuragportfolio.dev</a>
+            <a href="#" class="text-xl font-bold text-emerald-400 tracking-wider tech-label">anuragportfolio.dev</a>
             <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-teal-400">About</a>
-                <a href="#education" class="hover:text-teal-400">Education</a>
-                <a href="#skills" class="hover:text-teal-400">Skills</a>
-                <a href="#hardware" class="hover:text-teal-400">Hardware</a>
-                <a href="#software" class="hover:text-teal-400">Software</a>
-                <a href="#github" class="hover:text-teal-400">GitHub Repos</a>
-                <a href="#certificates" class="hover:text-teal-400">Certificates</a>
-                <a href="#gallery" class="hover:text-teal-400">Gallery</a>
-                <a href="#contact" class="hover:text-teal-400">Contact</a>
+                <a href="#about" class="hover:text-emerald-400 transition">About</a>
+                <a href="#education" class="hover:text-emerald-400 transition">Education</a>
+                <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
+                <a href="#hardware" class="hover:text-emerald-400 transition">Hardware</a>
+                <a href="#software" class="hover:text-emerald-400 transition">Software</a>
+                <a href="#github" class="hover:text-emerald-400 transition">GitHub Repos</a>
+                <a href="#certificates" class="hover:text-emerald-400 transition">Certificates</a>
+                <a href="#gallery" class="hover:text-emerald-400 transition">Gallery</a>
+                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
             </nav>
             <div class="flex items-center gap-2">
-                <!-- Theme Toggle Feature -->
-                <button onclick="toggleTheme()" class="bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 p-2 rounded-lg text-xs font-medium transition" title="Toggle Dark/Light Mode">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" class="bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/30 p-2 rounded-lg text-xs font-medium transition" title="Toggle Dark/Light Mode">
                     <i id="themeIcon" class="fa-solid fa-sun"></i>
                 </button>
-                <button onclick="editResumeLink()" class="manage-ctrl hidden bg-slate-800 hover:bg-slate-700 text-teal-400 border border-teal-500/30 px-3 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="editResumeLink()" class="manage-ctrl hidden bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-lg text-xs font-medium transition">
                     <i class="fa-solid fa-file-pdf mr-1"></i> Edit Resume Link
                 </button>
-                <button onclick="toggleManageMode()" id="manageBtn" class="bg-teal-600 hover:bg-teal-500 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition">
-                    <i class="fa-solid fa-gear mr-1"></i> Manage Content
+                <!-- Admin Login Button -->
+                <button onclick="toggleManageMode()" id="manageBtn" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-sm transition">
+                    <i class="fa-solid fa-lock mr-1"></i> Admin Login
                 </button>
             </div>
         </div>
@@ -48,26 +80,26 @@
     <!-- Hero Section with Profile Photo -->
     <section id="about" class="max-w-6xl mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center gap-10">
         <div class="relative group">
-            <div id="profileContainer" class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-4 border-teal-500 shadow-2xl bg-slate-800 flex items-center justify-center">
+            <div id="profileContainer" class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-4 border-emerald-500 shadow-2xl bg-slate-900 flex items-center justify-center">
                 <img id="profileImage" src="https://lh3.googleusercontent.com/d/1gNIdKlV41JoNTajMtFCLJdPnEELKMEW2" alt="Profile Photo" class="w-full h-full object-cover">
             </div>
-            <button onclick="editProfilePhoto()" class="absolute bottom-2 right-2 bg-teal-600 hover:bg-teal-500 text-white p-2.5 rounded-full shadow-lg transition" title="Change Photo URL">
+            <button onclick="editProfilePhoto()" class="manage-ctrl hidden absolute bottom-2 right-2 bg-emerald-600 hover:bg-emerald-500 text-slate-950 p-2.5 rounded-full shadow-lg transition" title="Change Photo URL">
                 <i class="fa-solid fa-camera"></i>
             </button>
         </div>
         <div class="flex-1 text-center md:text-left">
-            <div class="inline-block bg-teal-500/10 text-teal-400 border border-teal-500/30 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+            <div class="inline-block bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-4 tech-label">
                 7th Sem ECE Student at BIT Bangalore & Aspiring Embedded Engineer
             </div>
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Hi, I'm <span class="text-teal-400">Anurag</span></h1>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Hi, I'm <span class="text-emerald-400">Anurag</span></h1>
             <p class="text-slate-400 text-lg mb-6 leading-relaxed">
                 7th Semester ECE student at Bangalore Institute of Technology (BIT) and aspiring Embedded Systems Engineer bridging core hardware and intelligent software. Passionate about microcontroller programming, IoT automation, and real-time signal processing.
             </p>
             <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                <a href="#contact" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-teal-500/20">
+                <a href="#contact" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-emerald-500/20">
                     <i class="fa-solid fa-envelope mr-2"></i> Get in Touch
                 </a>
-                <a id="resumeDownloadBtn" href="#" target="_blank" onclick="handleResumeClick(event)" class="border border-slate-700 hover:border-teal-500 bg-slate-900 text-slate-200 px-6 py-3 rounded-xl transition inline-flex items-center">
+                <a id="resumeDownloadBtn" href="#" target="_blank" onclick="handleResumeClick(event)" class="border border-slate-700 hover:border-emerald-500 bg-slate-900 text-slate-200 px-6 py-3 rounded-xl transition inline-flex items-center">
                     <i class="fa-solid fa-download mr-2"></i> Download Resume
                 </a>
             </div>
@@ -75,26 +107,26 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
-        <h2 class="text-2xl font-bold mb-8 text-teal-400 flex items-center gap-2">
+    <section id="education" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
+        <h2 class="text-2xl font-bold mb-8 text-emerald-400 flex items-center gap-2">
             <i class="fa-solid fa-graduation-cap"></i> Education & Colleges
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
             <!-- Engineering College -->
             <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
-                <span class="text-xs text-teal-400 font-semibold uppercase tracking-wider">B.E / B.Tech (7th Sem ECE)</span>
+                <span class="text-xs text-emerald-400 font-semibold uppercase tracking-wider tech-label">B.E / B.Tech (7th Sem ECE)</span>
                 <h3 class="text-xl font-bold mt-1 mb-2">Bangalore Institute of Technology (BIT), Bangalore</h3>
                 <p class="text-slate-400 text-sm mb-2">Electronics and Communication Engineering. Affiliated to VTU.</p>
-                <div class="inline-flex items-center text-teal-400/80 text-xs font-medium">
+                <div class="inline-flex items-center text-emerald-400/80 text-xs font-medium">
                     <i class="fa-solid fa-location-dot mr-1.5"></i> VV Puram, Bengaluru, Karnataka
                 </div>
             </div>
             <!-- Diploma College -->
             <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
-                <span class="text-xs text-teal-400 font-semibold uppercase tracking-wider">Diploma (ECE)</span>
+                <span class="text-xs text-emerald-400 font-semibold uppercase tracking-wider tech-label">Diploma (ECE)</span>
                 <h3 class="text-xl font-bold mt-1 mb-2">Government Polytechnic, Vijayapura</h3>
                 <p class="text-slate-400 text-sm mb-2">Diploma in Electronics and Communication Engineering.</p>
-                <div class="inline-flex items-center text-teal-400/80 text-xs font-medium">
+                <div class="inline-flex items-center text-emerald-400/80 text-xs font-medium">
                     <i class="fa-solid fa-location-dot mr-1.5"></i> Vijayapura, Karnataka
                 </div>
             </div>
@@ -102,12 +134,12 @@
     </section>
 
     <!-- ECE & Tech Skills -->
-    <section id="skills" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
+    <section id="skills" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold text-teal-400 flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-emerald-400 flex items-center gap-2">
                 <i class="fa-solid fa-microchip"></i> Core ECE & Technical Skills
             </h2>
-            <button onclick="openModal('skillModal')" class="manage-ctrl hidden bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 text-xs rounded-lg transition">
+            <button onclick="openModal('skillModal')" class="manage-ctrl hidden bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1 text-xs rounded-lg transition">
                 <i class="fa-solid fa-plus mr-1"></i> Add Skill
             </button>
         </div>
@@ -117,12 +149,12 @@
     </section>
 
     <!-- Hardware Projects -->
-    <section id="hardware" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
+    <section id="hardware" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold text-teal-400 flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-emerald-400 flex items-center gap-2">
                 <i class="fa-solid fa-cpu"></i> Hardware & IoT Projects
             </h2>
-            <button onclick="openModal('hardwareModal')" class="manage-ctrl hidden bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 text-xs rounded-lg transition">
+            <button onclick="openModal('hardwareModal')" class="manage-ctrl hidden bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1 text-xs rounded-lg transition">
                 <i class="fa-solid fa-plus mr-1"></i> Add Hardware Project
             </button>
         </div>
@@ -132,12 +164,12 @@
     </section>
 
     <!-- Software & Simulation Projects -->
-    <section id="software" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
+    <section id="software" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold text-teal-400 flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-emerald-400 flex items-center gap-2">
                 <i class="fa-solid fa-code"></i> Software & Simulation Projects
             </h2>
-            <button onclick="openModal('softwareModal')" class="manage-ctrl hidden bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 text-xs rounded-lg transition">
+            <button onclick="openModal('softwareModal')" class="manage-ctrl hidden bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1 text-xs rounded-lg transition">
                 <i class="fa-solid fa-plus mr-1"></i> Add Software Project
             </button>
         </div>
@@ -146,32 +178,31 @@
         </div>
     </section>
 
-    <!-- Feature 3: Live GitHub Repositories Fetcher -->
-    <section id="github" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
+    <!-- Live GitHub Repositories Fetcher -->
+    <section id="github" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-            <h2 class="text-2xl font-bold text-teal-400 flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-emerald-400 flex items-center gap-2">
                 <i class="fa-brands fa-github"></i> GitHub Live Repositories
             </h2>
             <div class="flex gap-2 w-full sm:w-auto">
-                <input type="text" id="ghUsername" placeholder="Enter GitHub Username" class="bg-slate-900 border border-slate-800 text-xs px-3 py-2 rounded-xl text-white outline-none focus:border-teal-500 flex-1">
-                <button onclick="fetchGitHubRepos()" class="bg-teal-600 hover:bg-teal-500 text-white text-xs px-4 py-2 rounded-xl font-medium transition whitespace-nowrap">
+                <input type="text" id="ghUsername" placeholder="Enter GitHub Username" class="bg-slate-900 border border-slate-800 text-xs px-3 py-2 rounded-xl text-white outline-none focus:border-emerald-500 flex-1">
+                <button onclick="fetchGitHubRepos()" class="bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold text-xs px-4 py-2 rounded-xl transition whitespace-nowrap">
                     Fetch Repos
                 </button>
             </div>
         </div>
         <div id="githubGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- GitHub Repos Loaded Here -->
             <p class="text-slate-500 text-sm col-span-full">Click "Fetch Repos" above or type a GitHub username to load live repositories automatically.</p>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section id="certificates" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
+    <section id="certificates" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold text-teal-400 flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-emerald-400 flex items-center gap-2">
                 <i class="fa-solid fa-certificate"></i> Certifications
             </h2>
-            <button onclick="openModal('certModal')" class="manage-ctrl hidden bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 text-xs rounded-lg transition">
+            <button onclick="openModal('certModal')" class="manage-ctrl hidden bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1 text-xs rounded-lg transition">
                 <i class="fa-solid fa-plus mr-1"></i> Add Certificate
             </button>
         </div>
@@ -181,12 +212,12 @@
     </section>
 
     <!-- Photo Gallery -->
-    <section id="gallery" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-900">
+    <section id="gallery" class="max-w-6xl mx-auto px-4 py-12 border-t border-slate-800/80">
         <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold text-teal-400 flex items-center gap-2">
+            <h2 class="text-2xl font-bold text-emerald-400 flex items-center gap-2">
                 <i class="fa-solid fa-images"></i> Photo Gallery
             </h2>
-            <button onclick="openModal('galleryModal')" class="manage-ctrl hidden bg-teal-600 hover:bg-teal-500 text-white px-3 py-1 text-xs rounded-lg transition">
+            <button onclick="openModal('galleryModal')" class="manage-ctrl hidden bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1 text-xs rounded-lg transition">
                 <i class="fa-solid fa-plus mr-1"></i> Add Photo
             </button>
         </div>
@@ -195,37 +226,37 @@
         </div>
     </section>
 
-    <!-- Feature 2: Contact Form & Message System + Footer -->
-    <footer id="contact" class="bg-slate-900 border-t border-slate-800 mt-20 py-12">
+    <!-- Contact Form & Footer -->
+    <footer id="contact" class="bg-[#050811] border-t border-slate-800/80 mt-20 py-12">
         <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
             <div>
-                <h3 class="text-lg font-bold text-teal-400 mb-3">Anurag Portfolio</h3>
+                <h3 class="text-lg font-bold text-emerald-400 mb-3 tech-label">Anurag Portfolio</h3>
                 <p class="text-slate-400 text-sm mb-4">7th Semester ECE Student at BIT Bangalore & aspiring Embedded Systems Engineer.</p>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="mailto:anuragdeshpande6205@gmail.com" class="text-slate-300 hover:text-teal-400"><i class="fa-solid fa-envelope mr-2"></i> anuragdeshpande6205@gmail.com</a></li>
-                    <li><a href="tel:+918618952206" class="text-slate-300 hover:text-teal-400"><i class="fa-solid fa-phone mr-2"></i> +91 8618952206</a></li>
-                    <li><a href="https://www.linkedin.com/in/anurag-deshpande-52164136b" target="_blank" class="text-slate-300 hover:text-teal-400"><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn Profile</a></li>
+                    <li><a href="mailto:anuragdeshpande6205@gmail.com" class="text-slate-300 hover:text-emerald-400"><i class="fa-solid fa-envelope mr-2"></i> anuragdeshpande6205@gmail.com</a></li>
+                    <li><a href="tel:+918618952206" class="text-slate-300 hover:text-emerald-400"><i class="fa-solid fa-phone mr-2"></i> +91 8618952206</a></li>
+                    <li><a href="https://www.linkedin.com/in/anurag-deshpande-52164136b" target="_blank" class="text-slate-300 hover:text-emerald-400"><i class="fa-brands fa-linkedin mr-2"></i> LinkedIn Profile</a></li>
                 </ul>
             </div>
 
-            <!-- AJAX Interactive Contact Form -->
-            <div class="md:col-span-2 bg-slate-950 p-6 rounded-2xl border border-slate-800">
-                <h3 class="text-lg font-bold text-teal-400 mb-4 flex items-center gap-2">
+            <!-- Direct Contact Form -->
+            <div class="md:col-span-2 bg-slate-900 p-6 rounded-2xl border border-slate-800">
+                <h3 class="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
                     <i class="fa-solid fa-paper-plane"></i> Send Direct Message
                 </h3>
                 <form id="contactForm" onsubmit="sendContactMessage(event)" class="space-y-4">
                     <div class="grid sm:grid-cols-2 gap-4">
-                        <input type="text" id="senderName" required placeholder="Your Name" class="bg-slate-900 border border-slate-800 text-sm px-4 py-2.5 rounded-xl text-white outline-none focus:border-teal-500">
-                        <input type="email" id="senderEmail" required placeholder="Your Email" class="bg-slate-900 border border-slate-800 text-sm px-4 py-2.5 rounded-xl text-white outline-none focus:border-teal-500">
+                        <input type="text" id="senderName" required placeholder="Your Name" class="bg-slate-950 border border-slate-800 text-sm px-4 py-2.5 rounded-xl text-white outline-none focus:border-emerald-500">
+                        <input type="email" id="senderEmail" required placeholder="Your Email" class="bg-slate-950 border border-slate-800 text-sm px-4 py-2.5 rounded-xl text-white outline-none focus:border-emerald-500">
                     </div>
-                    <textarea id="senderMessage" required rows="3" placeholder="Write your message here..." class="w-full bg-slate-900 border border-slate-800 text-sm px-4 py-2.5 rounded-xl text-white outline-none focus:border-teal-500"></textarea>
-                    <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold px-6 py-2.5 rounded-xl transition text-sm">
+                    <textarea id="senderMessage" required rows="3" placeholder="Write your message here..." class="w-full bg-slate-950 border border-slate-800 text-sm px-4 py-2.5 rounded-xl text-white outline-none focus:border-emerald-500"></textarea>
+                    <button type="submit" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-6 py-2.5 rounded-xl transition text-sm">
                         Send Message
                     </button>
                 </form>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-slate-800/80 text-center text-xs text-slate-500 tech-label">
             &copy; 2026 Anurag. All rights reserved.
         </div>
     </footer>
@@ -233,14 +264,14 @@
     <!-- Universal Dynamic Modal -->
     <div id="genericModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden z-50 flex items-center justify-center p-4">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 relative shadow-2xl">
-            <h3 id="modalTitle" class="text-xl font-bold text-teal-400 mb-4">Add Item</h3>
+            <h3 id="modalTitle" class="text-xl font-bold text-emerald-400 mb-4">Add Item</h3>
             <form id="modalForm" onsubmit="handleFormSubmit(event)">
                 <div id="modalInputs" class="space-y-4">
                     <!-- Dynamic inputs injected here -->
                 </div>
                 <div class="flex justify-end gap-3 mt-6">
                     <button type="button" onclick="closeModals()" class="px-4 py-2 bg-slate-800 text-slate-300 rounded-xl hover:bg-slate-700 text-sm">Cancel</button>
-                    <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded-xl hover:bg-teal-500 text-sm font-medium">Save Item</button>
+                    <button type="submit" class="px-4 py-2 bg-emerald-600 text-slate-950 font-bold rounded-xl hover:bg-emerald-500 text-sm">Save Item</button>
                 </div>
             </form>
         </div>
@@ -248,6 +279,9 @@
 
     <!-- JavaScript Engine -->
     <script>
+        // Admin Password set to 6205
+        const ADMIN_PASSWORD = "6205";
+
         const DEFAULT_PHOTO = "https://lh3.googleusercontent.com/d/1gNIdKlV41JoNTajMtFCLJdPnEELKMEW2";
 
         let appData = JSON.parse(localStorage.getItem('anurag_portfolio_dynamic')) || {
@@ -280,7 +314,6 @@
         let currentActiveType = '';
         let isManageMode = false;
 
-        // Feature 1: Dark / Light Mode Toggle Function
         function toggleTheme() {
             const root = document.getElementById('htmlRoot');
             const icon = document.getElementById('themeIcon');
@@ -293,25 +326,22 @@
             }
         }
 
-        // Feature 2: Contact Message Handler
         function sendContactMessage(e) {
             e.preventDefault();
             const name = document.getElementById('senderName').value;
             const email = document.getElementById('senderEmail').value;
             const msg = document.getElementById('senderMessage').value;
             
-            // Redirect to mailto link with prefilled details
             const mailtoUrl = `mailto:anuragdeshpande6205@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nSender Email: ' + email)}`;
             window.location.href = mailtoUrl;
             alert("Opening mail client to send message to Anurag!");
             document.getElementById('contactForm').reset();
         }
 
-        // Feature 3: GitHub Live Repositories API Fetcher
         async function fetchGitHubRepos() {
             const username = document.getElementById('ghUsername').value.trim() || 'octocat';
             const grid = document.getElementById('githubGrid');
-            grid.innerHTML = `<p class="text-teal-400 text-sm col-span-full">Fetching repositories for ${username}...</p>`;
+            grid.innerHTML = `<p class="text-emerald-400 text-sm col-span-full">Fetching repositories for ${username}...</p>`;
             try {
                 const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
                 const data = await res.json();
@@ -322,12 +352,12 @@
                 grid.innerHTML = data.map(repo => `
                     <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl shadow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-teal-400 font-bold mb-1 truncate">${repo.name}</h3>
+                            <h3 class="text-emerald-400 font-bold mb-1 truncate">${repo.name}</h3>
                             <p class="text-slate-400 text-xs mb-4 line-clamp-2">${repo.description || 'No description provided.'}</p>
                         </div>
                         <div class="flex justify-between items-center text-xs">
                             <span class="text-slate-500"><i class="fa-solid fa-star text-amber-400 mr-1"></i>${repo.stargazers_count}</span>
-                            <a href="${repo.html_url}" target="_blank" class="text-teal-400 hover:underline"><i class="fa-brands fa-github mr-1"></i>View Code</a>
+                            <a href="${repo.html_url}" target="_blank" class="text-emerald-400 hover:underline"><i class="fa-brands fa-github mr-1"></i>View Code</a>
                         </div>
                     </div>
                 `).join('');
@@ -342,16 +372,24 @@
         }
 
         function toggleManageMode() {
-            isManageMode = !isManageMode;
             const btn = document.getElementById('manageBtn');
             const controls = document.querySelectorAll('.manage-ctrl');
-            if(isManageMode) {
-                btn.innerHTML = '<i class="fa-solid fa-check mr-1"></i> Done Managing';
-                btn.className = "bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition";
-                controls.forEach(el => el.classList.remove('hidden'));
+
+            if(!isManageMode) {
+                const passwordInput = prompt("Enter Admin Password:");
+                if(passwordInput === ADMIN_PASSWORD) {
+                    isManageMode = true;
+                    btn.innerHTML = '<i class="fa-solid fa-check mr-1"></i> Exit Admin';
+                    btn.className = "bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition";
+                    controls.forEach(el => el.classList.remove('hidden'));
+                    alert("Admin access granted!");
+                } else if(passwordInput !== null) {
+                    alert("Incorrect Password! Access denied.");
+                }
             } else {
-                btn.innerHTML = '<i class="fa-solid fa-gear mr-1"></i> Manage Content';
-                btn.className = "bg-teal-600 hover:bg-teal-500 text-white px-3 py-1.5 rounded-lg text-sm font-medium transition";
+                isManageMode = false;
+                btn.innerHTML = '<i class="fa-solid fa-lock mr-1"></i> Admin Login';
+                btn.className = "bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-sm transition";
                 controls.forEach(el => el.classList.add('hidden'));
             }
             renderAll();
@@ -369,7 +407,7 @@
 
             const skillsGrid = document.getElementById('skillsGrid');
             skillsGrid.innerHTML = appData.skills.map((skill, idx) => `
-                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex justify-between items-center shadow transition hover:border-teal-500/50">
+                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex justify-between items-center shadow transition hover:border-emerald-500/50">
                     <span class="font-medium text-sm">${skill}</span>
                     ${isManageMode ? `<button onclick="deleteItem('skills', ${idx})" class="text-red-400 hover:text-red-300 text-xs p-1"><i class="fa-solid fa-trash"></i></button>` : ''}
                 </div>
@@ -377,13 +415,13 @@
 
             const hwGrid = document.getElementById('hardwareGrid');
             hwGrid.innerHTML = appData.hardware.map((item, idx) => `
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow relative flex flex-col justify-between transition hover:border-teal-500/50">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow relative flex flex-col justify-between transition hover:border-emerald-500/50">
                     <div>
-                        <h3 class="text-lg font-bold text-teal-400 mb-1">${item.title}</h3>
+                        <h3 class="text-lg font-bold text-emerald-400 mb-1">${item.title}</h3>
                         <p class="text-slate-400 text-sm mb-4">${item.desc}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4 pt-4 border-t border-slate-800 text-xs">
-                        <a href="${item.link}" target="_blank" class="text-teal-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> View Project</a>
+                        <a href="${item.link}" target="_blank" class="text-emerald-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> View Project</a>
                         ${isManageMode ? `<button onclick="deleteItem('hardware', ${idx})" class="text-red-400 hover:text-red-300"><i class="fa-solid fa-trash mr-1"></i> Delete</button>` : ''}
                     </div>
                 </div>
@@ -391,13 +429,13 @@
 
             const swGrid = document.getElementById('softwareGrid');
             swGrid.innerHTML = appData.software.map((item, idx) => `
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow relative flex flex-col justify-between transition hover:border-teal-500/50">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow relative flex flex-col justify-between transition hover:border-emerald-500/50">
                     <div>
-                        <h3 class="text-lg font-bold text-teal-400 mb-1">${item.title}</h3>
+                        <h3 class="text-lg font-bold text-emerald-400 mb-1">${item.title}</h3>
                         <p class="text-slate-400 text-sm mb-4">${item.desc}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4 pt-4 border-t border-slate-800 text-xs">
-                        <a href="${item.link}" target="_blank" class="text-teal-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> View Code/App</a>
+                        <a href="${item.link}" target="_blank" class="text-emerald-400 hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> View Code/App</a>
                         ${isManageMode ? `<button onclick="deleteItem('software', ${idx})" class="text-red-400 hover:text-red-300"><i class="fa-solid fa-trash mr-1"></i> Delete</button>` : ''}
                     </div>
                 </div>
@@ -405,13 +443,13 @@
 
             const certGrid = document.getElementById('certGrid');
             certGrid.innerHTML = appData.certificates.map((item, idx) => `
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow relative flex flex-col justify-between transition hover:border-teal-500/50">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow relative flex flex-col justify-between transition hover:border-emerald-500/50">
                     <div>
-                        <h3 class="text-lg font-bold text-teal-400 mb-1">${item.title}</h3>
+                        <h3 class="text-lg font-bold text-emerald-400 mb-1">${item.title}</h3>
                         <p class="text-slate-400 text-sm mb-4">Issuer: ${item.issuer}</p>
                     </div>
                     <div class="flex justify-between items-center mt-4 pt-4 border-t border-slate-800 text-xs">
-                        <a href="${item.link}" target="_blank" class="text-teal-400 hover:underline"><i class="fa-solid fa-certificate mr-1"></i> Verify Certificate</a>
+                        <a href="${item.link}" target="_blank" class="text-emerald-400 hover:underline"><i class="fa-solid fa-certificate mr-1"></i> Verify Certificate</a>
                         ${isManageMode ? `<button onclick="deleteItem('certificates', ${idx})" class="text-red-400 hover:text-red-300"><i class="fa-solid fa-trash mr-1"></i> Delete</button>` : ''}
                     </div>
                 </div>
@@ -432,7 +470,7 @@
         function handleResumeClick(e) {
             if(!appData.resumeUrl || appData.resumeUrl === '#') {
                 e.preventDefault();
-                alert("Please click 'Manage Content' -> 'Edit Resume Link' at the top to add your Google Drive resume link first!");
+                alert("Please click 'Admin Login' at top to configure your resume link!");
             }
         }
 
@@ -454,26 +492,26 @@
 
             if(type === 'skillModal') {
                 title.innerText = "Add New Skill";
-                inputs.innerHTML = `<div><label class="block text-xs text-slate-400 mb-1">Skill Name</label><input type="text" id="val1" required placeholder="e.g. Embedded C" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-500 outline-none"></div>`;
+                inputs.innerHTML = `<div><label class="block text-xs text-slate-400 mb-1">Skill Name</label><input type="text" id="val1" required placeholder="e.g. Embedded C" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none"></div>`;
             } else if(type === 'hardwareModal' || type === 'softwareModal') {
                 title.innerText = type === 'hardwareModal' ? "Add Hardware Project" : "Add Software Project";
                 inputs.innerHTML = `
-                    <div><label class="block text-xs text-slate-400 mb-1">Project Title</label><input type="text" id="val1" required placeholder="Project Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-teal-500 outline-none"></div>
-                    <div><label class="block text-xs text-slate-400 mb-1">Description</label><input type="text" id="val2" required placeholder="Short description" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-teal-500 outline-none"></div>
-                    <div><label class="block text-xs text-slate-400 mb-1">Project Link URL</label><input type="text" id="val3" value="#" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Project Title</label><input type="text" id="val1" required placeholder="Project Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-emerald-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Description</label><input type="text" id="val2" required placeholder="Short description" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-emerald-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Project Link URL</label><input type="text" id="val3" value="#" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none"></div>
                 `;
             } else if(type === 'certModal') {
                 title.innerText = "Add Certificate";
                 inputs.innerHTML = `
-                    <div><label class="block text-xs text-slate-400 mb-1">Certificate Title</label><input type="text" id="val1" required placeholder="Course Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-teal-500 outline-none"></div>
-                    <div><label class="block text-xs text-slate-400 mb-1">Issuer Organization</label><input type="text" id="val2" required placeholder="Platform / Institute" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-teal-500 outline-none"></div>
-                    <div><label class="block text-xs text-slate-400 mb-1">Certificate URL</label><input type="text" id="val3" value="#" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Certificate Title</label><input type="text" id="val1" required placeholder="Course Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-emerald-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Issuer Organization</label><input type="text" id="val2" required placeholder="Platform / Institute" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-emerald-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Certificate URL</label><input type="text" id="val3" value="#" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none"></div>
                 `;
             } else if(type === 'galleryModal') {
                 title.innerText = "Add Photo";
                 inputs.innerHTML = `
-                    <div><label class="block text-xs text-slate-400 mb-1">Image URL</label><input type="text" id="val1" required placeholder="Paste Image Direct Link" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-teal-500 outline-none"></div>
-                    <div><label class="block text-xs text-slate-400 mb-1">Caption</label><input type="text" id="val2" required placeholder="Image description" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Image URL</label><input type="text" id="val1" required placeholder="Paste Image Direct Link" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white mb-3 focus:border-emerald-500 outline-none"></div>
+                    <div><label class="block text-xs text-slate-400 mb-1">Caption</label><input type="text" id="val2" required placeholder="Image description" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:border-emerald-500 outline-none"></div>
                 `;
             }
         }
